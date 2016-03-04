@@ -1,0 +1,15 @@
+<ul class="list-unstyled">
+  <li  ng-repeat="resource in resources"ng-if="resource.name == apiName">
+    <ul class="list-unstyled">
+      <li class="resource-operation" ng-repeat="op in resource.operations">
+
+        <div id="{{op.operationId}}" class="heading">
+          <div class="col-md-1"><span class="label {{label(op.httpMethod)}}" ng-bind="op.httpMethod"></span></div>
+          <div class="col-md-11">
+            <span ><a class="title">{{op.summary}}</a></span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ul>

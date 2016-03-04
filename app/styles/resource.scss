@@ -1,0 +1,12 @@
+.resource-operation{
+  padding: 20px;
+  margin: 20px;
+  border-top: solid 1px lightgray;
+
+  .title{
+    font-size:120%;
+    font-weight: normal;
+    color:black !important;
+    cursor: pointer;
+  }
+}

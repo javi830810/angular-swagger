@@ -1,0 +1,26 @@
+<div swagger-ui url="swaggerUrl" loading="isLoading" parser="json" api-explorer="true" error-handler="myErrorHandler">
+
+  <div class="col-md-2">
+    <ul class="list-unstyled endpoints">
+      <li><div ng-include src="'views/main.html'"></div></li>
+      <li ng-repeat="api in resources track by $index"
+          class="endpoint"
+          ng-class="{active:api.open}"
+          ng-include src="'views/endpoint.html'"></li>
+    </ul>
+
+  </div>
+
+  <div class="col-md-6">
+
+    <div ui-view>
+
+    </div>
+
+  </div>
+
+  <div class="col-md-4">
+    COLUMN 3
+  </div>
+
+</div>

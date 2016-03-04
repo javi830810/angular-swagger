@@ -1,0 +1,18 @@
+<div class="swagger-ui" aria-live="polite" aria-relevant="additions removals">
+  <div class="api-name">
+    <h3 ng-bind="infos.title"></h3> </div>
+  <div class="api-description" ng-bind-html="infos.description"></div>
+  <div class="api-infos">
+    <div class="api-infos-contact" ng-if="infos.contact">
+      <div ng-if="infos.contact.name" class="api-infos-contact-name">created by <span ng-bind="infos.contact.name"></span>
+      </div>
+      <div ng-if="infos.contact.url" class="api-infos-contact-url">see more at
+        <a href="{{infos.contact.url}}" ng-bind="infos.contact.url"></a>
+      </div> <a ng-if="infos.contact.email" class="api-infos-contact-url" href="mailto:{{infos.contact.email}}?subject={{infos.title}}">contact the developer</a> </div>
+    <div class="api-infos-license" ng-if="infos.license"> <span>license: </span>
+      <a href="{{infos.license.url}}" ng-bind="infos.license.name"></a>
+    </div>
+  </div>
+
+
+</div>
