@@ -1,12 +1,33 @@
 .resource-operation{
   padding: 20px;
-  margin: 20px;
-  border-top: solid 1px lightgray;
+  margin: 50px;
+
+  .operation-method{
+    font-size:100%;
+    font-weight: normal;
+  }
 
   .title{
-    font-size:120%;
+
+    padding: 10px;
+    font-size:150%;
     font-weight: normal;
-    color:black !important;
+    color:#444 !important;
     cursor: pointer;
+  }
+
+  .sub-title{
+    position:absolute;
+    padding-left: 50px;
+    padding-top: 10px;
+    font-size:110%;
+    font-style: italic;
+    font-weight: normal;
+    color:#666 !important;
+    cursor: pointer;
+  }
+
+  .resource-operation-response{
+
   }
 }

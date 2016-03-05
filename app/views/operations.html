@@ -3,12 +3,30 @@
     <ul class="list-unstyled">
       <li class="resource-operation" ng-repeat="op in resource.operations">
 
-        <div id="{{op.operationId}}" class="heading">
-          <div class="col-md-1"><span class="label {{label(op.httpMethod)}}" ng-bind="op.httpMethod"></span></div>
-          <div class="col-md-11">
-            <span ><a class="title">{{op.summary}}</a></span>
+        <div class="col-md-8">
+          <div id="{{op.operationId}}" class="resource-operation">
+            <div class="col-md-1">
+                <span class="label {{label(op.httpMethod)}} operation-method" ng-bind="op.httpMethod"></span>
+            </div>
+            <div class="col-md-11">
+              <span class="title">{{op.summary}}</span>
+            </div>
+            <div class="col-md-12">
+              <span class="sub-title">{{op.description}}</span>
+            </div>
           </div>
         </div>
+
+        <div class="col-md-4">
+          <div class="resource-operation-response">
+            <ul class="nav nav-pills">
+              <li role="presentation" ng-repeat="(code,resp) in op.responses track by $index">
+                <a>{{code}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
       </li>
     </ul>
   </li>
