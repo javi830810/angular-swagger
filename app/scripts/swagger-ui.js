@@ -75,11 +75,6 @@ angular
         .execute(swaggerModules.PARSE, $scope.parser, swaggerUrl, swaggerType, swagger, $scope.trustedSources, parseResult)
         .then(function(executed) {
 
-          //$scope.infos = {
-          //  title: 'xxx'
-          //};
-          //console.log($scope.infos);
-
           if (executed) {
             swaggerParsed(parseResult);
           } else {
@@ -105,6 +100,8 @@ angular
           $scope.infos = parseResult.infos;
           $scope.form = parseResult.form;
           $scope.resources = parseResult.resources;
+
+          console.log($scope.resources);
 
           if ($scope.permalinks) {
             $timeout(function() {
@@ -906,7 +903,7 @@ angular
               operation.responseClass = response;
               operation.responseClass.display = 1;
               operation.responseClass.status = code;
-              delete operation.responses[code];
+              //delete operation.responses[code];
             } else {
               operation.hasResponses = true;
             }

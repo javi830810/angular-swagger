@@ -9,30 +9,10 @@ var app = angular
     'ngSanitize',
     'ngTouch',
     'swaggerUi',
-    'ui.router'
+    'ui.router',
+    'ui.bootstrap'
   ]);
 
-  //.config(function ($routeProvider) {
-  //  $routeProvider
-  //    .when('/', {
-  //      templateUrl: 'views/index.html',
-  //      controller: 'MainCtrl',
-  //      controllerAs: 'main'
-  //    })
-  //    .when('/api', {
-  //      templateUrl: 'views/api.html',
-  //      controller: 'ApiCtrl',
-  //      controllerAs: 'api'
-  //    })
-  //    .when('/api/:name', {
-  //      templateUrl: 'views/api.html',
-  //      controller: 'OperationController',
-  //      controllerAs: 'api_details'
-  //    })
-  //    .otherwise({
-  //      redirectTo: '/'
-  //    });
-  //});
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');

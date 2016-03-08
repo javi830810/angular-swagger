@@ -1,6 +1,6 @@
 .resource-operation{
-  padding: 20px;
-  margin: 50px;
+
+  padding: 30px 0px !important;
 
   .operation-method{
     font-size:100%;
@@ -9,7 +9,7 @@
 
   .title{
 
-    padding: 10px;
+
     font-size:150%;
     font-weight: normal;
     color:#444 !important;
@@ -17,9 +17,7 @@
   }
 
   .sub-title{
-    position:absolute;
-    padding-left: 50px;
-    padding-top: 10px;
+
     font-size:110%;
     font-style: italic;
     font-weight: normal;
@@ -30,4 +28,16 @@
   .resource-operation-response{
 
   }
+
+
+}
+
+.panel-heading a:after {
+  font-family:'Glyphicons Halflings';
+  content:"\e114";
+  float: right;
+  color: grey;
+}
+.panel-heading a.collapsed:after {
+  content:"\e080";
 }

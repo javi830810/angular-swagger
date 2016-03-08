@@ -12,7 +12,7 @@ angular.module('ulticonnectApp')
 
     // init form
     $scope.isLoading = false;
-    $scope.url = $scope.swaggerUrl = 'http://petstore.swagger.io/v2/swagger.json';
+    $scope.url = $scope.swaggerUrl = 'https://np16.ultipro.com/api-docs/swagger.json';
     // error management
     $scope.myErrorHandler = function(data, status){
       alert('failed to load swagger: ' + status+'   '+data);
@@ -35,6 +35,37 @@ angular.module('ulticonnectApp')
         return 'label-info';
       else if(op == 'delete')
         return 'label-danger';
+    };
+
+
+    $scope.getUrl = function(parameters){
+      var url = '';
+
+      parameters.forEach(function(parameter){
+          if (url.length != 0)
+            url += "&";
+          url += parameter.name + "={{value}}"
+      });
+
+      return url;
+    };
+
+    var paramsCache = {};
+
+    $scope.getParamType = function(operation, type){
+      if(paramsCache[operation.id + "_" + type] != null)
+        return paramsCache[operation.id + "_" + type];
+
+      var params = [];
+
+      operation.parameters.forEach(function(parameter){
+        if(parameter.in == type) {
+          params.push(parameter)
+        }
+      });
+
+      paramsCache[operation.name + "_" + type] = params;
+      return params;
     }
 
 }]);
